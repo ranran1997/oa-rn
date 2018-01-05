@@ -9,7 +9,8 @@ import {
   Platform,
   StyleSheet,
   Text,
-  View
+  View,
+  StatusBar
 } from 'react-native';
 import {Tab} from './src/routes';
 
@@ -23,7 +24,13 @@ const instructions = Platform.select({
 export default class App extends Component<{}> {
   render() {
     return (
-      <Tab/>
+      <View style={{flex:1}}>
+        <StatusBar
+          backgroundColor="rgba(0,0,0,0)"
+          translucent={true}
+        />
+        <Tab/>
+      </View>
     );
   }
 }

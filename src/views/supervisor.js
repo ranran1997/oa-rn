@@ -6,6 +6,7 @@ import {
   Image,
   View
 } from 'react-native';
+import Icon from 'react-native-vector-icons/Iconfont';
 export default class SupervisorScreen extends Component {
   static navigationOptions = ({ navigation, screenProps }) => ({
     title: '督察督办',
@@ -13,8 +14,8 @@ export default class SupervisorScreen extends Component {
     tabBarIcon: ({tintColor, focused}) => {
       return (
         focused ? 
-        <Image style={{width:22,height:22}} source={require('../assets/images/nav1_active.png')}/> : 
-        <Image style={{width:22,height:22}} source={require('../assets/images/nav1.png')}/>
+        <Icon name='nav' size={20} color="#2296E7"/> : 
+        <Icon name='nav' size={20} color="#888"/>
       )
     }
   });

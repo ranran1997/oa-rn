@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {
-  Image
+  Image,
+  StatusBar
 } from 'react-native';
 import {TabNavigator, StackNavigator, NavigationActions} from 'react-navigation';
 import ProcessingScreen from '../views/processing';
@@ -17,9 +18,9 @@ const tabOptions = {
   backBehavior: 'none',
   tabBarOptions: {
     showIcon: true,
-    activeTintColor: '#EB3D00',
-    pressColor: 'rgba(235,61,0,0.05)',
-    inactiveTintColor: '#666',
+    activeTintColor: '#2296E7',
+    pressColor: 'rgba(34,150,231,0.1)',
+    inactiveTintColor: '#888',
     indicatorStyle: {
       height:0
     },
@@ -33,7 +34,7 @@ const tabOptions = {
       height:20
     },
     labelStyle: {
-      fontSize:12
+      fontSize:12,
     }
   }
 };
@@ -57,7 +58,8 @@ const navBarOption = {
       elevation:0,
       shadowOpacity:0,
       backgroundColor:'#2296E7',
-      height:50
+      height:50 + StatusBar.currentHeight,
+      paddingTop: StatusBar.currentHeight
     },
     headerRight: <Image source={require('../assets/images/null.png')}/>,
     headerLeft: <Image source={require('../assets/images/null.png')}/>

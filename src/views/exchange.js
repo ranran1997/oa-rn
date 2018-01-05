@@ -6,6 +6,7 @@ import {
   Image,
   View
 } from 'react-native';
+import Icon from 'react-native-vector-icons/Iconfont';
 export default class ExchangeScreen extends Component {
   static navigationOptions = ({ navigation, screenProps }) => ({
     title: '公文交换',
@@ -13,8 +14,8 @@ export default class ExchangeScreen extends Component {
     tabBarIcon: ({tintColor, focused}) => {
       return (
         focused ? 
-        <Image style={{width:22,height:22}} source={require('../assets/images/nav1_active.png')}/> : 
-        <Image style={{width:22,height:22}} source={require('../assets/images/nav1.png')}/>
+        <Icon name='nav2' size={20} color="#2296E7"/> : 
+        <Icon name='nav2' size={20} color="#888"/>
       )
     }
   });
