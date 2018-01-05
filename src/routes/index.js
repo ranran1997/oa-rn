@@ -61,8 +61,7 @@ const navBarOption = {
       elevation:0,
       shadowOpacity:0,
       backgroundColor:'#2296E7',
-      height:50 + StatusBar.currentHeight,
-      paddingTop: StatusBar.currentHeight
+      height:50
     },
     headerRight: <Image source={require('../assets/images/null.png')}/>,
     headerLeft: <Image source={require('../assets/images/null.png')}/>

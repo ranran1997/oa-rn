@@ -10,6 +10,8 @@ import {
   StyleSheet,
   Text,
   View,
+  BackHandler,
+  ToastAndroid,
   StatusBar
 } from 'react-native';
 import {Tab} from './src/routes';
@@ -20,14 +22,34 @@ const instructions = Platform.select({
   android: 'Double tap R on your keyboard to reload,\n' +
     'Shake or press menu button for dev menu',
 });
-
+var firstClick = 0;
 export default class App extends Component<{}> {
+  constructor (props) {
+    super(props)
+    this.handleBack = this.handleBack.bind(this);
+  }
+  componentWillMount () {
+    BackHandler.addEventListener('hardwareBackPress', this.handleBack);
+  }
+  componentWillUnmount () {
+    BackHandler.removeEventListener('hardwareBackPress', this.handleBack);
+  }
+  handleBack = () => {
+    var timestamp = (new Date()).valueOf();
+    if (timestamp - firstClick > 2000) {
+        firstClick = timestamp;
+        ToastAndroid.show('再按一次退出', ToastAndroid.SHORT);
+        return true;
+    } else {
+        return false;
+    }
+  }
   render() {
     return (
       <View style={{flex:1}}>
         <StatusBar
-          backgroundColor="rgba(0,0,0,0)"
-          translucent={true}
+          backgroundColor="rgba(34,150,231,1)"
+          translucent={false}
         />
         <Tab/>
       </View>
