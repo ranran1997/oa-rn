@@ -4,10 +4,12 @@ import {
   StatusBar
 } from 'react-native';
 import {TabNavigator, StackNavigator, NavigationActions} from 'react-navigation';
+import CardStackStyleInterpolator from 'react-navigation/src/views/CardStack/CardStackStyleInterpolator';
 import ProcessingScreen from '../views/processing';
 import ExchangeScreen from '../views/exchange';
 import MeetingScreen from '../views/meeting';
 import SupervisorScreen from '../views/supervisor';
+import HelpScreen from '../views/help';
 
 const tabOptions = {
   tabBarPosition:'bottom', //tabBar的位置
@@ -40,6 +42,7 @@ const tabOptions = {
 };
 const navBarOption = {
   transitionConfig:()=>({
+    screenInterpolator:CardStackStyleInterpolator.forHorizontal,
     transitionSpec: {
       duration: 200
     }
@@ -69,6 +72,9 @@ const navBarOption = {
 const ProcessingStack = StackNavigator({
   Processing: {
     screen: ProcessingScreen
+  },
+  Help: {
+    screen: HelpScreen
   }
 },navBarOption)
 const ExchangeStack = StackNavigator({
