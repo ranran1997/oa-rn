@@ -37,6 +37,7 @@ const tabOptions = {
     },
     labelStyle: {
       fontSize:12,
+      fontFamily:'PingFang SC'
     }
   }
 };
@@ -53,7 +54,8 @@ const navBarOption = {
       alignSelf: 'center',
       fontWeight: 'normal',
       fontSize:16,
-      color:'#fff'
+      color:'#fff',
+      fontFamily:'PingFang SC'
     },
     headerStyle: {
       borderBottomWidth:.5,
